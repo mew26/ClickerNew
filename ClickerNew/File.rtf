@@ -1,0 +1,130 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red178\green24\blue137;\red30\green32\blue40;\red255\green255\blue255;
+\red131\green192\blue87;\red120\green109\blue196;\red0\green160\blue190;\red65\green182\blue69;\red93\green216\blue255;
+\red65\green161\blue192;\red219\green44\blue56;}
+{\*\expandedcolortbl;;\csgenericrgb\c69800\c9500\c53600;\csgenericrgb\c11800\c12500\c15700;\csgenericrgb\c100000\c100000\c100000;
+\csgenericrgb\c51200\c75400\c34300;\csgenericrgb\c46900\c42600\c77000;\csgenericrgb\c0\c62600\c74600;\csgenericrgb\c25500\c71400\c27000;\csgenericrgb\c36295\c84643\c99897;
+\csgenericrgb\c25490\c63137\c75294;\csgenericrgb\c85900\c17100\c21900;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\deftab890
+\pard\tx890\pardeftab890\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf2 \cb3 if\cf4  \cf5 money\cf4  == \cf6 5.00\cf4 \{\
+                    \cf5 on\cf4 .\cf7 toggle\cf4 ()\
+                \}\
+                \
+               \cf8 // money+=1.00\cf4 \
+                \cf5 clicker\cf4 .\cf7 isEnabled\cf4  = \cf5 mny\cf4 .\cf7 isOn\cf4 \
+                \cf5 mny\cf4 .\cf7 isOn\cf4  = \cf2 true\cf4 \
+             \cf8 //   Thread.sleep(forTimeInterval: 0.5)\cf4 \
+                \cf2 while\cf4  \cf5 money\cf4  > \cf6 5.00\cf4  \cf7 &&\cf4  \cf5 on\cf4  \cf7 ==\cf4  \cf2 true\cf4  \cf7 &&\cf4  \cf2 false\cf4 \{\
+                    \cf5 money\cf4  \cf7 +=\cf4  \cf6 1\cf4 \
+                    \cf2 continue\cf4 \
+                \}\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\cf8 //\cf4 \
+\cf8 //  ViewController.swift\cf4 \
+\cf8 //  ClickerNew\cf4 \
+\cf8 //\cf4 \
+\cf8 //  Created by Jasper Beede on 10/27/21.\cf4 \
+\cf8 //  Copyright \'a9 2021 Jasper Beede. All rights reserved.\cf4 \
+\cf8 //\cf4 \
+\
+\cf2 import\cf4  UIKit\
+\cf2 class\cf4  \cf9 \cb3 ViewController\cf4 \cb3 : \cf7 UIViewController\cf4  \{\
+    \cf8 //MARK:
+\f1\b \cf8 \cb3  - Number counter
+\f0\b0 \cf4 \cb3 \
+    \cf2 @IBOutlet\cf4  \cf2 weak\cf4  \cf2 var\cf4  \cf10 \cb3 clicker\cf4 \cb3 : \cf7 UIButton\cf4 !\
+   \
+    \cf2 @IBOutlet\cf4  \cf2 weak\cf4  \cf2 var\cf4  \cf10 \cb3 mny\cf4 \cb3 : \cf7 UISwitch\cf4 !\
+    \cf2 var\cf4  \cf10 \cb3 on\cf4 \cb3 :\cf7 Bool\cf4  = \cf2 false\cf4 \
+    \
+    \cf2 @IBOutlet\cf4  \cf2 weak\cf4  \cf2 var\cf4  \cf10 \cb3 counter\cf4 \cb3 : \cf7 UILabel\cf4 !\
+    \cf2 var\cf4  \cf10 \cb3 money\cf4 \cb3 :\cf7 Double\cf4  = \cf6 0.00\cf4 \
+    \
+        \
+    \cf2 override\cf4  \cf2 func\cf4  \cf10 \cb3 viewDidLoad\cf4 \cb3 () \{\
+        \cf2 super\cf4 .\cf7 viewDidLoad\cf4 ()\
+        \cf8 // Do any additional setup after loading the view.\cf4 \
+        \
+    \}\
+    \cf2 func\cf4  \cf10 \cb3 updateControls\cf4 \cb3 () \{\
+        \cf2 while\cf4  \cf5 money\cf4  >= \cf6 5.00\cf4 \{\
+            \cf2 switch\cf4  \cf5 on\cf4  \{\
+            \cf2 case\cf4  \cf2 true\cf4 :\
+                \cf5 on\cf4  = \cf2 true\cf4 \
+            \cf2 default\cf4 :\
+                \cf5 on\cf4  = \cf2 false\cf4 \
+            \}\
+            \cf2 repeat\cf4 \{\
+                \cf2 if\cf4  \cf5 money\cf4  == \cf6 5.00\cf4 \{\
+                    \cf5 on\cf4 .\cf7 toggle\cf4 ()\
+                \}\
+                \
+               \cf8 // money+=1.00\cf4 \
+                \cf5 clicker\cf4 .\cf7 isEnabled\cf4  = \cf5 mny\cf4 .\cf7 isOn\cf4 \
+                \cf5 mny\cf4 .\cf7 isOn\cf4  = \cf2 true\cf4 \
+             \cf8 //   Thread.sleep(forTimeInterval: 0.5)\cf4 \
+                \cf2 while\cf4  \cf5 money\cf4  > \cf6 5.00\cf4  \cf7 &&\cf4  \cf5 on\cf4  \cf7 ==\cf4  \cf2 true\cf4  \cf7 &&\cf4  \cf2 false\cf4 \{\
+                    \cf5 money\cf4  \cf7 +=\cf4  \cf6 1\cf4 \
+                    \cf2 continue\cf4 \
+                \}\
+                \cf2 return\cf4  \cf5 counter\cf4 .\cf7 text\cf4  = (\cf11 \cb3 "$\cf4 \cb3 \\(\cf5 money\cf4 )\cf11 \cb3 "\cf4 \cb3 )\
+            \}\cf2 while\cf4  \cf5 money\cf4  >= \cf6 5.00\cf4 \
+            \cf8 //clicker.isEnabled = mny.isOn\cf4 \
+            \
+            \
+        \}\
+        \cf5 updateControls\cf4 ()\
+    \}\
+    \
+    \cf8 //MARK:
+\f1\b \cf8 \cb3 - Clicker
+\f0\b0 \cf4 \cb3 \
+        \cf2 @IBAction\cf4  \cf2 func\cf4  \cf10 \cb3 clicker\cf4 \cb3 (\cf2 _\cf4  sender: \cf7 UIButton\cf4 ) \{\
+            \cf5 money\cf4  \cf7 +=\cf4  \cf6 1.00\cf4 \
+            \cf5 counter\cf4 .\cf7 text\cf4  = (\cf11 \cb3 "$\cf4 \cb3 \\(\cf5 money\cf4 )\cf11 \cb3 "\cf4 \cb3 )\
+\cf8 //        func mny(_ sender: UISwitch) \{\cf4 \
+          \cf2 if\cf4  \cf5 money\cf4  >= \cf6 5.00\cf4  \{\
+            \cf8 //on.toggle()\cf4 \
+            \cf5 mny\cf4 .\cf7 isOn\cf4  = \cf2 true\cf4 \
+            \cf2 repeat\cf4 \{\
+                \cf5 money\cf7 +=\cf6 1.00\cf4 \
+                \cf5 clicker\cf4 .\cf7 isEnabled\cf4  = \cf5 mny\cf4 .\cf7 isOn\cf4 \
+                \cf7 Thread\cf4 .\cf7 sleep\cf4 (forTimeInterval: \cf6 0.5\cf4 )\
+                \cf2 if\cf4  \cf5 money\cf4  == \cf6 5.00\cf4 \{\
+                    \
+                    \
+                \}\
+                  \cf8 // money+=1.00\cf4 \
+                   \cf5 clicker\cf4 .\cf7 isEnabled\cf4  = \cf5 mny\cf4 .\cf7 isOn\cf4 \
+                   \cf5 mny\cf4 .\cf7 isOn\cf4  = \cf2 true\cf4 \
+                \cf8 //   Thread.sleep(forTimeInterval: 0.5)\cf4 \
+                   \cf2 while\cf4  \cf5 money\cf4  > \cf6 5.00\cf4  \cf7 &&\cf4  \cf5 on\cf4  \cf7 ==\cf4  \cf2 true\cf4  \cf7 &&\cf4  \cf2 false\cf4 \{\
+                       \cf5 money\cf4  \cf7 +=\cf4  \cf6 1\cf4 \
+                    \cf2 return\cf4  \cf5 counter\cf4 .\cf7 text\cf4  = (\cf11 \cb3 "$\cf4 \cb3 \\(\cf5 money\cf4 )\cf11 \cb3 "\cf4 \cb3 )\
+                   \}\
+                \cf2 return\cf4  \cf5 counter\cf4 .\cf7 text\cf4  = (\cf11 \cb3 "$\cf4 \cb3 \\(\cf5 money\cf4 )\cf11 \cb3 "\cf4 \cb3 )\
+            \}\cf2 while\cf4  \cf5 on\cf4  \cf7 ==\cf4  \cf2 true\cf4 \
+            \
+           \cf8 // counter.text = ("$\\(money)")\cf4 \
+            \cf8 //updateControls()\cf4 \
+           \}\
+       \cf8 // \}\cf4 \
+            \
+    \
+    \}\
+\}\
+\
+\
+}
